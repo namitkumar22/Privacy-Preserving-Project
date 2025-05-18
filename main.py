@@ -562,7 +562,7 @@ with st.sidebar.expander("License Information"):
         st.error(f"Could not load license information: {e}")
 
 # Hidden developer menu (only accessible with a special query parameter)
-if st.query_params().get("dev_mode", [""])[0] == "true":
+if st.experimental_get_query_params().get("dev_mode", [""])[0] == "true":
     st.sidebar.markdown("---")
     with st.sidebar.expander("Developer Options", expanded=False):
         st.write("Developer Mode Active")
